@@ -9,11 +9,11 @@ module.exports = defineConfig( {
 	video: true,
 	reporter: 'mochawesome',
 	reporterOptions: {
-		mochaFile: "mochawesome-[name]",
-		reportDir: __dirname+"/reports",
+		mochaFile: 'mochawesome-[name]',
+		reportDir: __dirname+'/reports',
 		overwrite: false,
 		html: false,
-		json: true
+		json: true,
 	},
 	e2e: {
 		setupNodeEvents( on, config ) {
