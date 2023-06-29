@@ -28,8 +28,6 @@ jobs:
         cd release
         git branch --show-current
         mv .git $RUNNER_TEMP/.git
-        rm -rf *
-        ls -lah
         cd ..
 
     - name: Check versions
@@ -50,10 +48,8 @@ jobs:
         GITHUB_SHA: ${{ github.event.commits[0].sha }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        echo $GITHUB_REPOSITORY
         cd release
         mv $RUNNER_TEMP/.git .git
-        ls -lah
         git branch --show-current
 
         git config --global user.email "bounce@peterwilson.cc"
