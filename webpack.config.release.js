@@ -9,13 +9,14 @@ module.exports = {
 	plugins: [
 		new CopyPlugin( {
 			patterns: [
+				{ from: '.git/*', to: './' },
+				{ from: '.github/workflows/*', to: './' },
+				{ from: '.gitattributes', to: './' },
 				{ from: 'readme.txt', to: './' },
 				{ from: 'README.md', to: './' },
 				{ from: 'CHANGELOG.md', to: './' },
 				{ from: 'composer.json', to: './' },
 				{ from: 'distributor.php', to: './' },
-				{ from: '.github/workflows/*', to: './' },
-				{ from: '.gitattributes', to: './' },
 				{ from: 'assets/img/*', to: './' },
 				{ from: 'dist/**/*', to: './' },
 				{ from: 'includes/**/*', to: './' },
