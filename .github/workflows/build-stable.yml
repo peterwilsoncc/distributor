@@ -20,6 +20,17 @@ jobs:
         php-version: 7.4
         tools: composer:v2, wp
 
+    - name: Clone stable branch to the release folder
+      env:
+        GITHUB_REPOSITORY: ${{ github.event.repository.name }}
+      run: |
+        git clone --branch stable https://github.com/$GITHUB_REPOSITORY.git release
+        cd release
+        git branch --show-current
+        rm -rf !(.git)
+        ls -lah
+        cd ..
+
     - name: Check versions
       run: |
         npm -v
@@ -39,7 +50,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         echo $GITHUB_REPOSITORY
-        cp -r .git release
         cd release
         ls -lah
         git branch --show-current
