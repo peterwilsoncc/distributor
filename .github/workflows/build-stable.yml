@@ -25,7 +25,9 @@ jobs:
         GITHUB_REPOSITORY: ${{ github.event.repository.name }}
       run: |
         git clone --depth 1 --branch stable https://github.com/$GITHUB_REPOSITORY.git release
-        rm -rf release/*
+        cd release
+        rm -rf *
+        cd ..
 
     - name: Check versions
       run: |
