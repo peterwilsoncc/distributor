@@ -24,7 +24,8 @@ jobs:
       env:
         GITHUB_REPOSITORY: ${{ github.event.repository.name }}
       run: |
-        git clone --branch stable https://github.com/$GITHUB_REPOSITORY.git release
+        # Clone the repo to the release directory, the dot clones it from the existing checkout.
+        git clone --branch stable . release
         cd release
         git branch --show-current
         mv .git $RUNNER_TEMP/.git
