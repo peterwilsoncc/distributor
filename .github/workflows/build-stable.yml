@@ -48,11 +48,12 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         echo $GITHUB_REPOSITORY
+        cd release
+
         git config --global user.email "bounce@peterwilson.cc"
         git config --global user.name "Bounce"
         git remote set-url origin "https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
 
-        cd release
         git add .
         git commit -m "Committing built version of $GITHUB_SHA"
         git push origin stable
