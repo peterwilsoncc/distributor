@@ -27,7 +27,9 @@ jobs:
         git clone --branch stable https://github.com/$GITHUB_REPOSITORY.git release
         cd release
         git branch --show-current
-        rm -rf !(.git)
+        mv .git $RUNNER_TEMP/.git
+        rm -rf *
+        mv $RUNNER_TEMP/.git .git
         ls -lah
         cd ..
 
