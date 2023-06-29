@@ -21,8 +21,10 @@ jobs:
         tools: composer:v2, wp
 
     - name: Clone stable branch to the release folder
+      env:
+        GITHUB_REPOSITORY: ${{ github.event.repository.name }}
       run: |
-        git clone --depth 1 --branch stable release
+        git clone --depth 1 --branch stable https://github.com/$GITHUB_REPOSITORY.git release
         rm -rf release/*
 
     - name: Check versions
