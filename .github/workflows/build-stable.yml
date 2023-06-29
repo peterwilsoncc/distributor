@@ -19,6 +19,12 @@ jobs:
       with:
         php-version: 7.4
         tools: composer:v2, wp
+
+    - name: Clone stable branch to the release folder
+      run: |
+        git clone --depth 1 --branch stable release
+        rm -rf release/*
+
     - name: Check versions
       run: |
         npm -v
