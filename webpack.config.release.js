@@ -9,7 +9,6 @@ module.exports = {
 	plugins: [
 		new CopyPlugin( {
 			patterns: [
-				{ from: '.git/*', to: './' },
 				{ from: '.github/workflows/*', to: './' },
 				{ from: '.gitattributes', to: './' },
 				{ from: 'readme.txt', to: './' },
