@@ -28,8 +28,6 @@ jobs:
         cd release
         git branch --show-current
         mv .git $RUNNER_TEMP/.git
-        rm -rf *
-        ls -lah
         cd ..
 
     - name: Check versions
@@ -52,7 +50,6 @@ jobs:
       run: |
         cd release
         mv $RUNNER_TEMP/.git .git
-        ls -lah
         git branch --show-current
 
         git config --global user.email "bounce@peterwilson.cc"
