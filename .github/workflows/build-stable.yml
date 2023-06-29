@@ -28,6 +28,7 @@ jobs:
         cd release
         git branch --show-current
         rm -rf *
+        ls -lah
         cd ..
 
     - name: Check versions
