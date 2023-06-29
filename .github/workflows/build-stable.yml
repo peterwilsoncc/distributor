@@ -26,6 +26,7 @@ jobs:
       run: |
         git clone --depth 1 --branch stable https://github.com/$GITHUB_REPOSITORY.git release
         cd release
+        git branch --show-current
         rm -rf *
         cd ..
 
@@ -49,6 +50,7 @@ jobs:
       run: |
         echo $GITHUB_REPOSITORY
         cd release
+        git branch --show-current
 
         git config --global user.email "bounce@peterwilson.cc"
         git config --global user.name "Bounce"
