@@ -59,4 +59,4 @@ jobs:
 
         git add .
         git commit -m "Committing built version of $GITHUB_SHA"
-        git push origin stable
+        git push origin HEAD:stable
