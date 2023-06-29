@@ -37,8 +37,9 @@ jobs:
         GITHUB_SHA: ${{ github.event.commits[0].sha }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        git config --global user.email "10upbot+github@10up.com"
-        git config --global user.name "10upbot on GitHub"
+        echo $GITHUB_REPOSITORY
+        git config --global user.email "bounce@peterwilson.cc"
+        git config --global user.name "Bounce"
         git remote set-url origin "https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
 
         cd release
